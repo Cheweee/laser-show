@@ -16,7 +16,7 @@ import s7 from '../assets/clients/s7.png';
 import gedon from '../assets/clients/gedon.jpg';
 import whiskas from '../assets/clients/whiskas.jpg';
 
-import clientsBackground from '../assets/laser show 2.jpg';
+import clientsBackground from '../assets/clients_background.jpg';
 //#endregion
 
 const styles = mergeStyles(appStyles)

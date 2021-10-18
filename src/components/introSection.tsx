@@ -14,7 +14,7 @@ import { mergeStyles } from "./utils";
 const styles = mergeStyles(appStyles);
 
 interface Props extends WithStyles<typeof styles> {
-    playingVideo: boolean;
+    sectionShown: boolean;
     sectionRef: React.RefObject<HTMLDivElement>;
     onScrollDown: () => void;
 }
@@ -23,7 +23,7 @@ export const IntroSection = withStyles(styles)(function (props: Props) {
     const {
         classes,
         sectionRef: ref,
-        playingVideo,
+        sectionShown,
         onScrollDown,
     } = props;
 
@@ -40,11 +40,10 @@ export const IntroSection = withStyles(styles)(function (props: Props) {
         <Grid
             alignItems="center"
             justifyContent="center">
-            <Grid item className={classes.h100}></Grid>
             <IconButton size="large" className={classes.closeIntro} onClick={() => onScrollDown()}>
                 <ArrowDownward fontSize="inherit" />
             </IconButton>
         </Grid>
-        <ReactPlayer playing={playingVideo} loop muted className={classes.introVideo} url={introVideo} />
+        <ReactPlayer playing={sectionShown} loop muted className={classes.introVideo} url={introVideo} />
     </Grid>);
 });

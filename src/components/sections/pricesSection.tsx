@@ -10,6 +10,9 @@ import { appStyles } from "../../theme";
 import { mergeStyles, options } from "../../utils";
 
 import pricesBackground from '../../assets/prices_background.jpg';
+import { Price1Section } from "./price1Section";
+import { Price2Section } from "./price2Section";
+import { Price3Section } from "./price3Section";
 
 const styles = mergeStyles(appStyles);
 
@@ -34,7 +37,7 @@ export const PricesSection = withStyles(styles)(function (props: Props) {
     const videoUrl: string = '../../assets/prices_video.mp4';
 
     useEffect(() => {
-        if (sectionShown) return;
+        if (!sectionShown) return;
 
         switch (priceIndex) {
             case 0: price1Ref && price1Ref.current?.scrollIntoView(options);
@@ -44,7 +47,7 @@ export const PricesSection = withStyles(styles)(function (props: Props) {
             case 2: price3Ref && price3Ref.current?.scrollIntoView(options);
                 break;
         }
-    }, [priceIndex]);
+    }, [sectionShown, priceIndex]);
 
     function priceBack() {
         priceIndex > 0 && setPriceIndex(priceIndex - 1);
@@ -64,74 +67,9 @@ export const PricesSection = withStyles(styles)(function (props: Props) {
             >
                 <Grid xs={6} item container direction="row" className={classes.cardsContainer}>
                     <div className={classes.cardsWrapper}>
-                        <Grid ref={price1Ref} className={classes.cardRed}
-                            container
-                            direction="column"
-                            alignItems="center"
-                            justifyContent="center">
-                            <Grid>
-                                <Typography variant="h4" component="h4">
-                                    Стоимость лазерного шоу
-                                </Typography>
-                                <Grid container direction="row">
-                                    <Grid item xs="auto" container direction="column" className={`${classes.mt2} ${classes.mr1}`}>
-                                        <Typography variant="h6" component="h6">Лучевое лазерное шоу 5-6 мин.</Typography>
-                                        <Typography variant="h6" component="h6">Анимационное лазерное шоу 5-6 мин.</Typography>
-                                    </Grid>
-                                    <Grid item xs="auto" container direction="column" className={`${classes.mt2} ${classes.mr1}`}>
-                                        <Typography variant="h6" component="h6">25 000 &#8381;</Typography>
-                                        <Typography variant="h6" component="h6">40 000 &#8381;</Typography>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid ref={price2Ref} className={classes.cardLightBlue}
-                            container
-                            direction="column"
-                            alignItems="center"
-                            justifyContent="center">
-                            <Grid>
-                                <Typography variant="h4" component="h4">
-                                    Изготовление  лазерного шоу эксклюзивно для заказчика
-                                </Typography>
-                                <Typography className={classes.mt2} variant="h6" component="h6">Прорисовка 1 минуты шоу</Typography>
-                                <Grid container direction="row">
-                                    <Grid item xs="auto" container direction="column" className={`${classes.mt2} ${classes.mr1}`}>
-                                        <Typography variant="h6" component="h6">Лучевое лазерное шоу </Typography>
-                                        <Typography variant="h6" component="h6">Анимационное лазерное шоу (прорисовка 1 минуты шоу)</Typography>
-                                    </Grid>
-                                    <Grid item xs="auto" container direction="column" className={`${classes.mt2} ${classes.mr1}`}>
-                                        <Typography variant="h6" component="h6">2 500 &#8381;</Typography>
-                                        <Typography variant="h6" component="h6">5 000 &#8381;</Typography>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid ref={price3Ref} className={classes.cardRed}
-                            container
-                            direction="column"
-                            alignItems="center"
-                            justifyContent="center">
-                            <Grid>
-                                <Typography variant="h4" component="h4">
-                                    Поверхности для лазерного проецирования
-                                </Typography>
-                                <Grid container direction="row" justifyContent="center">
-                                    <Grid item xs="auto" container direction="column" className={`${classes.mt2} ${classes.mr1}`}>
-                                        <Typography variant="h6" component="h6">Водный занавес</Typography>
-                                        <Typography variant="h6" component="h6">Водный веерный экран</Typography>
-                                        <Typography variant="h6" component="h6">Водное облако</Typography>
-                                        <Typography variant="h6" component="h6">Проекционная сетка</Typography>
-                                    </Grid>
-                                    <Grid item xs="auto" container direction="column" className={`${classes.mt2} ${classes.mr1}`}>
-                                        <Typography variant="h6" component="h6">от 40 000 &#8381;</Typography>
-                                        <Typography variant="h6" component="h6">от 40 000 &#8381;</Typography>
-                                        <Typography variant="h6" component="h6">от 20 000 &#8381;</Typography>
-                                        <Typography variant="h6" component="h6">от 10 000 &#8381;</Typography>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
+                        <Price1Section sectionRef={price1Ref} />
+                        <Price2Section sectionRef={price2Ref} />
+                        <Price3Section sectionRef={price3Ref} />
                     </div>
                     <Grid direction="row" container className={classes.cardsControls}>
                         <Grid item xs={1}>
@@ -154,7 +92,7 @@ export const PricesSection = withStyles(styles)(function (props: Props) {
                 </Grid>
                 <Grid xs={6} item container direction="row">
                     <Grid xs={6} item className={classes.cardImg}>
-                        <img src={`${pricesBackground}?w=162&auto=format`} srcSet={`${pricesBackground}?w=162&auto=format&dpr=2 2x`} alt="show" loading="lazy" />
+                        <img src={pricesBackground} alt="show" loading="lazy" />
                     </Grid>
                     <Grid xs={6} item className={classes.cardPurple}
                         container

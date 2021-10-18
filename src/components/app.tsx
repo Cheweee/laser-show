@@ -30,6 +30,7 @@ import whiskas from '../assets/clients/whiskas.jpg';
 import laserShow3 from '../assets/laser show 3.jpg';
 import clientsBackground from '../assets/laser show 2.jpg';
 import { IntroSection } from "./introSection";
+import { AboutUseSection } from "./aboutUsSection";
 //#endregion
 
 const styles = mergeStyles(appStyles);
@@ -153,31 +154,7 @@ export const App = withStyles(styles)(function (props: any) {
                 </IconButton>
             </div>
             <IntroSection playingVideo={introPlaying} sectionRef={introRef} onScrollDown={scrollToAboutUs} />
-            <Grid ref={aboutUsRef}
-                container
-                alignItems="center"
-                justifyContent="center"
-                className={`${classes.body} ${classes.intro} ${classes.p4}`}>
-                <Grid direction="row" container>
-                    <Grid></Grid>
-                    <Grid item xs="auto" className={classes.mr4}><div className={classes.vl} /></Grid>
-                    <Grid item xs={6} container direction="column">
-                        <Typography variant="h4" component="h4" className={`${classes.text} ${classes.thinFont}`}>
-                            Наша компания имеет успешный опыт работы на рынке event-услуг и зарекомендовала себя
-                            как надежный партнер в организации любого события
-                        </Typography>
-                        <Typography variant="h6" component="h6" className={`${classes.text} ${classes.thinFont} ${classes.mt3}`}>
-                            Уникальность, надёжность и качество
-                            - наши принципы, и мы отвественно выполняем все требования и пожелаения клиентов.
-                        </Typography>
-                        <Typography variant="h6" component="h6" className={`${classes.text} ${classes.thinFont} ${classes.mt3}`}>
-                            С помощью создаваемых на нашем оборудовании спецэффектов, которые действительно завораживают
-                            и удивляют, наши специалисты создадут для Вас, Ваших сотрудников, гостей или клиентов чарующее, красочное
-                            волшебное представление.
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </Grid>
+            <AboutUseSection sectionRef={aboutUsRef} />
             <Grid ref={clientsRef}
                 container
                 alignItems="center"

@@ -4,7 +4,6 @@ import { withStyles } from "@mui/styles";
 import { Grid, IconButton, Typography } from "@mui/material";
 import {
     ArrowBack,
-    ArrowDownward,
     ArrowForward,
     Instagram,
     Phone,
@@ -16,21 +15,21 @@ import MasonryItem from '@mui/lab/MasonryItem';
 
 import ReactPlayer from "react-player";
 
-import { appStyles } from "../../theme";
-import { mergeStyles } from "../utils";
+import { appStyles } from "../theme";
+import { mergeStyles } from "./utils";
 
 //#region images
-import bigLogo from '../../assets/Big Logo.svg'
-import mvideo from '../../assets/clients/mvideo.svg';
-import danone from '../../assets/clients/danone.png';
-import porsche from '../../assets/clients/porsche.png';
-import renault from '../../assets/clients/renault.png';
-import rosbank from '../../assets/clients/rosbank.png';
-import s7 from '../../assets/clients/s7.png';
-import gedon from '../../assets/clients/gedon.jpg';
-import whiskas from '../../assets/clients/whiskas.jpg';
-import laserShow3 from '../../assets/laser show 3.jpg';
-import clientsBackground from '../../assets/laser show 2.jpg';
+import mvideo from '../assets/clients/mvideo.svg';
+import danone from '../assets/clients/danone.png';
+import porsche from '../assets/clients/porsche.png';
+import renault from '../assets/clients/renault.png';
+import rosbank from '../assets/clients/rosbank.png';
+import s7 from '../assets/clients/s7.png';
+import gedon from '../assets/clients/gedon.jpg';
+import whiskas from '../assets/clients/whiskas.jpg';
+import laserShow3 from '../assets/laser show 3.jpg';
+import clientsBackground from '../assets/laser show 2.jpg';
+import { IntroSection } from "./introSection";
 //#endregion
 
 const styles = mergeStyles(appStyles);
@@ -69,12 +68,21 @@ export const App = withStyles(styles)(function (props: any) {
                 setIntroPlaying(true);
                 break;
             }
-            case 1: aboutUsRef && aboutUsRef.current?.scrollIntoView(options);
+            case 1: {
+                aboutUsRef && aboutUsRef.current?.scrollIntoView(options);
+                setIntroPlaying(false);
                 break;
-            case 2: clientsRef && clientsRef.current?.scrollIntoView(options);
+            }
+            case 2: {
+                clientsRef && clientsRef.current?.scrollIntoView(options);
+                setIntroPlaying(false);
                 break;
-            case 3: pricesRef && pricesRef.current?.scrollIntoView(options);
+            }
+            case 3: {
+                pricesRef && pricesRef.current?.scrollIntoView(options);
+                setIntroPlaying(false);
                 break;
+            }
         }
     }, [index, options]);
 
@@ -144,23 +152,7 @@ export const App = withStyles(styles)(function (props: any) {
                     <FiberManualRecord />
                 </IconButton>
             </div>
-            <Grid ref={introRef}
-                container
-                direction="column"
-                alignItems="center"
-                justifyContent="center"
-                className={`${classes.body} ${classes.intro}`}>
-                <img width={640} src={bigLogo} alt="art house media group" />
-                <Grid
-                    alignItems="center"
-                    justifyContent="center">
-                    <Grid item className={classes.h100}></Grid>
-                    <IconButton size="large" className={classes.closeIntro} onClick={() => scrollToAboutUs()}>
-                        <ArrowDownward fontSize="inherit" />
-                    </IconButton>
-                </Grid>
-                <ReactPlayer playing={introPlaying} loop muted className={classes.introVideo} url={"../../assets/MVI_8358.mp4"} />
-            </Grid>
+            <IntroSection playingVideo={introPlaying} sectionRef={introRef} onScrollDown={scrollToAboutUs} />
             <Grid ref={aboutUsRef}
                 container
                 alignItems="center"
@@ -353,7 +345,7 @@ export const App = withStyles(styles)(function (props: any) {
                 <Grid xs item>
                     <ReactPlayer
                         className={classes.contactsVideo}
-                        url={"../../assets/WhatsApp Video 2021-10-11 at 19.37.35.mp4"}
+                        url={"../assets/WhatsApp Video 2021-10-11 at 19.37.35.mp4"}
                         playing loop muted />
                 </Grid>
             </Grid >

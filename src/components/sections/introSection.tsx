@@ -8,10 +8,10 @@ import ReactPlayer from "react-player";
 
 import bigLogo from '../../assets/big_logo.svg'
 
-import { appStyles } from "../../theme";
+import { appStyles, sectionsStyles } from "../../theme";
 import { mergeStyles } from "../../utils";
 
-const styles = mergeStyles(appStyles);
+const styles = mergeStyles(appStyles, sectionsStyles);
 
 interface Props extends WithStyles<typeof styles> {
     sectionShown: boolean;

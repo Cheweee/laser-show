@@ -2,7 +2,7 @@ import Masonry from "@mui/lab/Masonry";
 import MasonryItem from "@mui/lab/MasonryItem";
 import { Grid, Typography } from "@mui/material";
 import { withStyles, WithStyles } from "@mui/styles";
-import { appStyles } from "../../theme";
+import { appStyles, sectionsStyles } from "../../theme";
 import { mergeStyles } from "../../utils";
 
 //#region images
@@ -18,7 +18,7 @@ import whiskas from '../../assets/clients/whiskas.jpg';
 import clientsBackground from '../../assets/clients_background.jpg';
 //#endregion
 
-const styles = mergeStyles(appStyles)
+const styles = mergeStyles(appStyles, sectionsStyles)
 
 interface Props extends WithStyles<typeof styles> {
     sectionRef: React.RefObject<HTMLDivElement>;

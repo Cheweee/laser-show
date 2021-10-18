@@ -1,10 +1,10 @@
 import { FiberManualRecord } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import { withStyles, WithStyles } from "@mui/styles";
-import { appStyles } from "../theme";
+import { appStyles, appTimelineStyles } from "../theme";
 import { mergeStyles } from "../utils";
 
-const styles = mergeStyles(appStyles);
+const styles = mergeStyles(appStyles, appTimelineStyles);
 
 interface Props extends WithStyles<typeof styles> {
     sectionIndex: number;
@@ -19,7 +19,7 @@ export const AppTimeline = withStyles(styles)(function (props: Props) {
     } = props;
 
     return (
-        <div className={classes.navigator}>
+        <div className={classes.appTimeline}>
             <IconButton onClick={() => onSectionNavigate(0)} className={`${sectionIndex === 0 && 'active'}`}>
                 <FiberManualRecord />
             </IconButton>

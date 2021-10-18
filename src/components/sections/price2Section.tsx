@@ -1,9 +1,9 @@
 import { Grid, Typography } from "@mui/material";
 import { withStyles, WithStyles } from "@mui/styles";
-import { appStyles } from "../../theme";
+import { appStyles, pricesStyles } from "../../theme";
 import { mergeStyles } from "../../utils";
 
-const styles = mergeStyles(appStyles);
+const styles = mergeStyles(appStyles, pricesStyles);
 
 interface Props extends WithStyles<typeof styles> {
     sectionRef: React.RefObject<HTMLDivElement>;

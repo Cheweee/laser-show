@@ -1,9 +1,13 @@
-import { ArrowDownward } from "@mui/icons-material";
 import { Grid, IconButton } from "@mui/material";
+
 import { withStyles, WithStyles } from "@mui/styles";
+
+import { ArrowDownward } from "@mui/icons-material";
+
 import ReactPlayer from "react-player";
 
 import bigLogo from '../assets/big_logo.svg'
+
 import { appStyles } from "../theme";
 import { mergeStyles } from "./utils";
 

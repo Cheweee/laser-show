@@ -10,6 +10,7 @@ import { IntroSection } from "./introSection";
 import { AboutUseSection } from "./aboutUsSection";
 import { ClientsSection } from "./clientsSection";
 import { PricesSection } from "./pricesSection";
+import { AppTimeline } from "./appTimeline";
 
 const styles = mergeStyles(appStyles);
 
@@ -43,22 +44,6 @@ export const App = withStyles(styles)(function (props: any) {
         }
     }, [index]);
 
-    function scrollToIntro() {
-        setIndex(0);
-    }
-
-    function scrollToAboutUs() {
-        setIndex(1);
-    }
-
-    function scrollToClients() {
-        setIndex(2);
-    }
-
-    function scrollToPrices() {
-        setIndex(3);
-    }
-
     function handleScroll(event: any) {
         if (!scrollingDone) {
             event.stopPropagation();
@@ -74,21 +59,8 @@ export const App = withStyles(styles)(function (props: any) {
 
     return (
         <div className={classes.h100} onWheel={(event) => handleScroll(event)}>
-            <div className={classes.navigator}>
-                <IconButton onClick={() => scrollToIntro()} className={`${index === 0 && 'active'}`}>
-                    <FiberManualRecord />
-                </IconButton>
-                <IconButton onClick={() => scrollToAboutUs()} className={`${index === 1 && 'active'}`}>
-                    <FiberManualRecord />
-                </IconButton>
-                <IconButton onClick={() => scrollToClients()} className={`${index === 2 && 'active'}`}>
-                    <FiberManualRecord />
-                </IconButton>
-                <IconButton onClick={() => scrollToPrices()} className={`${index === 3 && 'active'}`}>
-                    <FiberManualRecord />
-                </IconButton>
-            </div>
-            <IntroSection sectionRef={introRef} sectionShown={index === 0} onScrollDown={scrollToAboutUs} />
+            <AppTimeline sectionIndex={index} onSectionNavigate={(index) => setIndex(index)} />
+            <IntroSection sectionRef={introRef} sectionShown={index === 0} onScrollDown={() => setIndex(1)} />
             <AboutUseSection sectionRef={aboutUsRef} />
             <ClientsSection sectionRef={clientsRef} />
             <PricesSection sectionRef={pricesRef} sectionShown={index === 3} />

@@ -6,7 +6,7 @@ import { ArrowBack, ArrowForward, Phone, Instagram } from "@mui/icons-material";
 
 import ReactPlayer from "react-player";
 
-import { appStyles, pricesStyles, sectionsStyles } from "../../theme";
+import { bootstrap, pricesStyles, sectionsStyles } from "../../theme";
 import { mergeStyles, options } from "../../utils";
 
 import pricesBackground from '../../assets/prices_background.jpg';
@@ -14,7 +14,7 @@ import { Price1Section } from "./price1Section";
 import { Price2Section } from "./price2Section";
 import { Price3Section } from "./price3Section";
 
-const styles = mergeStyles(appStyles, sectionsStyles, pricesStyles);
+const styles = mergeStyles(bootstrap, sectionsStyles, pricesStyles);
 
 interface Props extends WithStyles<typeof styles> {
     sectionRef: React.RefObject<HTMLDivElement>;
@@ -91,7 +91,7 @@ export const PricesSection = withStyles(styles)(function (props: Props) {
                     </Grid>
                 </Grid>
                 <Grid xs={6} item container direction="row">
-                    <Grid xs={6} item className={classes.cardImg}>
+                    <Grid xs={6} item className={classes.coverImg}>
                         <img src={pricesBackground} alt="show" loading="lazy" />
                     </Grid>
                     <Grid xs={6} item className={classes.cardPurple}

@@ -1,4 +1,4 @@
-export const appStyles = () => ({
+export const bootstrap = () => ({
     text: {
         color: '#fff !important'
     },
@@ -51,8 +51,5 @@ export const appStyles = () => ({
     },
     mt4: {
         marginTop: '4em !important'
-    },
-    borderedImage: {
-        borderRadius: '5px'
     }
 });

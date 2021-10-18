@@ -2,10 +2,10 @@ import { Grid, Typography } from "@mui/material";
 
 import { WithStyles, withStyles } from "@mui/styles";
 
-import { appStyles, sectionsStyles } from "../../theme";
+import { bootstrap, sectionsStyles } from "../../theme";
 import { mergeStyles } from "../../utils";
 
-const styles = mergeStyles(appStyles, sectionsStyles);
+const styles = mergeStyles(bootstrap, sectionsStyles);
 
 interface Props extends WithStyles<typeof styles> {
     sectionRef: React.RefObject<HTMLDivElement>;
@@ -21,7 +21,7 @@ export const AboutUseSection = withStyles(styles)(function (props: Props) {
             container
             alignItems="center"
             justifyContent="center"
-            className={`${classes.body} ${classes.intro} ${classes.p4}`}>
+            className={`${classes.body} ${classes.p4}`}>
             <Grid direction="row" container>
                 <Grid></Grid>
                 <Grid item xs="auto" className={classes.mr4}><div className={classes.vl} /></Grid>

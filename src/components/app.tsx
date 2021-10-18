@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { withStyles } from "@mui/styles";
 
-import { appStyles } from "../theme";
+import { bootstrap } from "../theme";
 import { mergeStyles, options } from "../utils";
 
 import { IntroSection } from "./sections/introSection";
@@ -11,7 +11,7 @@ import { ClientsSection } from "./sections/clientsSection";
 import { PricesSection } from "./sections/pricesSection";
 import { AppTimeline } from "./appTimeline";
 
-const styles = mergeStyles(appStyles);
+const styles = mergeStyles(bootstrap);
 
 export const App = withStyles(styles)(function (props: any) {
     const { classes } = props;

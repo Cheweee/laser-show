@@ -2,7 +2,7 @@ import Masonry from "@mui/lab/Masonry";
 import MasonryItem from "@mui/lab/MasonryItem";
 import { Grid, Typography } from "@mui/material";
 import { withStyles, WithStyles } from "@mui/styles";
-import { appStyles, sectionsStyles } from "../../theme";
+import { bootstrap, sectionsStyles } from "../../theme";
 import { mergeStyles } from "../../utils";
 
 //#region images
@@ -18,7 +18,7 @@ import whiskas from '../../assets/clients/whiskas.jpg';
 import clientsBackground from '../../assets/clients_background.jpg';
 //#endregion
 
-const styles = mergeStyles(appStyles, sectionsStyles)
+const styles = mergeStyles(bootstrap, sectionsStyles)
 
 interface Props extends WithStyles<typeof styles> {
     sectionRef: React.RefObject<HTMLDivElement>;
@@ -34,7 +34,7 @@ export const ClientsSection = withStyles(styles)(function (props: Props) {
         <Grid ref={sectionRef}
             container
             alignItems="center"
-            className={`${classes.body} ${classes.intro}`}>
+            className={`${classes.body}`}>
             <Grid container>
                 <Grid item className={classes.mr3}>
                     <Typography variant="h4" component="h4" className={classes.text}>Наши клиенты</Typography>
@@ -43,33 +43,33 @@ export const ClientsSection = withStyles(styles)(function (props: Props) {
                 <Grid item xs>
                     <Masonry columns={3} spacing={5}>
                         <MasonryItem>
-                            <img className={classes.clientsItem} src={gedon} alt={"GEDON"} loading="lazy" />
+                            <img className={classes.clientImg} src={gedon} alt={"GEDON"} loading="lazy" />
                         </MasonryItem>
                         <MasonryItem>
-                            <img className={classes.clientsItem} src={mvideo} alt={"MVIDEO"} loading="lazy" />
+                            <img className={classes.clientImg} src={mvideo} alt={"MVIDEO"} loading="lazy" />
                         </MasonryItem>
                         <MasonryItem>
-                            <img className={classes.clientsItem} src={porsche} alt={"PORSCHE"} loading="lazy" />
+                            <img className={classes.clientImg} src={porsche} alt={"PORSCHE"} loading="lazy" />
                         </MasonryItem>
                         <MasonryItem>
-                            <img className={classes.clientsItem} src={rosbank} alt={"ROSBANK"} loading="lazy" />
+                            <img className={classes.clientImg} src={rosbank} alt={"ROSBANK"} loading="lazy" />
                         </MasonryItem>
                         <MasonryItem>
-                            <img className={classes.clientsItem} src={renault} alt={"RENAULT"} loading="lazy" />
+                            <img className={classes.clientImg} src={renault} alt={"RENAULT"} loading="lazy" />
                         </MasonryItem>
                         <MasonryItem>
-                            <img className={classes.clientsItem} src={danone} alt={"DANONE"} loading="lazy" />
+                            <img className={classes.clientImg} src={danone} alt={"DANONE"} loading="lazy" />
                         </MasonryItem>
                         <MasonryItem>
-                            <img className={classes.clientsItem} src={whiskas} alt={"WHISKAS"} loading="lazy" />
+                            <img className={classes.clientImg} src={whiskas} alt={"WHISKAS"} loading="lazy" />
                         </MasonryItem>
                         <MasonryItem>
-                            <img className={classes.clientsItem} src={s7} alt={"S7"} loading="lazy" />
+                            <img className={classes.clientImg} src={s7} alt={"S7"} loading="lazy" />
                         </MasonryItem>
                     </Masonry>
                 </Grid>
             </Grid>
-            <img className={classes.aboutUsBackground} src={clientsBackground} alt="laser show" />
+            <img className={`${classes.aboutUsBackground} ${classes.background}`} src={clientsBackground} alt="laser show" />
         </Grid>
     )
 })

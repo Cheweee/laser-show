@@ -8,10 +8,10 @@ import ReactPlayer from "react-player";
 
 import bigLogo from '../../assets/big_logo.svg'
 
-import { appStyles, sectionsStyles } from "../../theme";
+import { bootstrap, sectionsStyles } from "../../theme";
 import { mergeStyles } from "../../utils";
 
-const styles = mergeStyles(appStyles, sectionsStyles);
+const styles = mergeStyles(bootstrap, sectionsStyles);
 
 interface Props extends WithStyles<typeof styles> {
     sectionShown: boolean;
@@ -35,16 +35,16 @@ export const IntroSection = withStyles(styles)(function (props: Props) {
         direction="column"
         alignItems="center"
         justifyContent="center"
-        className={`${classes.body} ${classes.intro}`}>
+        className={classes.body}>
         <img width={640} src={bigLogo} alt={logoAlt} />
         <Grid
             alignItems="center"
             justifyContent="center">
             <Grid className={classes.h100} />
-            <IconButton size="large" className={classes.closeIntro} onClick={() => onScrollDown()}>
+            <IconButton size="large" className={classes.closeIntroButton} onClick={() => onScrollDown()}>
                 <ArrowDownward fontSize="inherit" />
             </IconButton>
         </Grid>
-        <ReactPlayer playing={sectionShown} loop muted className={classes.introVideo} url={introVideo} />
+        <ReactPlayer playing={sectionShown} loop muted className={`${classes.introVideo} ${classes.background}`} url={introVideo} />
     </Grid>);
 });

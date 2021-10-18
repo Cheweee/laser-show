@@ -40,6 +40,7 @@ export const IntroSection = withStyles(styles)(function (props: Props) {
         <Grid
             alignItems="center"
             justifyContent="center">
+            <Grid className={classes.h100} />
             <IconButton size="large" className={classes.closeIntro} onClick={() => onScrollDown()}>
                 <ArrowDownward fontSize="inherit" />
             </IconButton>

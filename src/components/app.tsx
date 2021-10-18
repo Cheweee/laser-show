@@ -5,7 +5,7 @@ import { IconButton } from "@mui/material";
 import { FiberManualRecord } from "@mui/icons-material";
 
 import { appStyles } from "../theme";
-import { mergeStyles, options } from "./utils";
+import { mergeStyles, options } from "../utils";
 import { IntroSection } from "./introSection";
 import { AboutUseSection } from "./aboutUsSection";
 import { ClientsSection } from "./clientsSection";

@@ -9,7 +9,7 @@ import ReactPlayer from "react-player";
 import bigLogo from '../assets/big_logo.svg'
 
 import { appStyles } from "../theme";
-import { mergeStyles } from "./utils";
+import { mergeStyles } from "../utils";
 
 const styles = mergeStyles(appStyles);
 

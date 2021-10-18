@@ -3,7 +3,7 @@ import MasonryItem from "@mui/lab/MasonryItem";
 import { Grid, Typography } from "@mui/material";
 import { withStyles, WithStyles } from "@mui/styles";
 import { appStyles } from "../theme";
-import { mergeStyles } from "./utils";
+import { mergeStyles } from "../utils";
 
 
 //#region images

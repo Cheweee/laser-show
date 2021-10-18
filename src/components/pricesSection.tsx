@@ -7,7 +7,7 @@ import { ArrowBack, ArrowForward, Phone, Instagram } from "@mui/icons-material";
 import ReactPlayer from "react-player";
 
 import { appStyles } from "../theme";
-import { mergeStyles, options } from "./utils";
+import { mergeStyles, options } from "../utils";
 
 import pricesBackground from '../assets/prices_background.jpg';
 

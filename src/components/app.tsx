@@ -1,15 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
 import { withStyles } from "@mui/styles";
-import { IconButton } from "@mui/material";
-import { FiberManualRecord } from "@mui/icons-material";
 
 import { appStyles } from "../theme";
 import { mergeStyles, options } from "../utils";
-import { IntroSection } from "./introSection";
-import { AboutUseSection } from "./aboutUsSection";
-import { ClientsSection } from "./clientsSection";
-import { PricesSection } from "./pricesSection";
+
+import { IntroSection } from "./sections/introSection";
+import { AboutUseSection } from "./sections/aboutUsSection";
+import { ClientsSection } from "./sections/clientsSection";
+import { PricesSection } from "./sections/pricesSection";
 import { AppTimeline } from "./appTimeline";
 
 const styles = mergeStyles(appStyles);
@@ -64,6 +63,6 @@ export const App = withStyles(styles)(function (props: any) {
             <AboutUseSection sectionRef={aboutUsRef} />
             <ClientsSection sectionRef={clientsRef} />
             <PricesSection sectionRef={pricesRef} sectionShown={index === 3} />
-        </div >
+        </div>
     )
 });

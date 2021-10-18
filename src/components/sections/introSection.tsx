@@ -6,10 +6,10 @@ import { ArrowDownward } from "@mui/icons-material";
 
 import ReactPlayer from "react-player";
 
-import bigLogo from '../assets/big_logo.svg'
+import bigLogo from '../../assets/big_logo.svg'
 
-import { appStyles } from "../theme";
-import { mergeStyles } from "../utils";
+import { appStyles } from "../../theme";
+import { mergeStyles } from "../../utils";
 
 const styles = mergeStyles(appStyles);
 
@@ -27,7 +27,7 @@ export const IntroSection = withStyles(styles)(function (props: Props) {
         onScrollDown,
     } = props;
 
-    const introVideo: string = '../assets/intro.mp4';
+    const introVideo: string = '../../assets/intro.mp4';
     const logoAlt: string = 'art house media group';
 
     return (<Grid ref={ref}

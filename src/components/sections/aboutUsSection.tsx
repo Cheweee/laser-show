@@ -2,8 +2,8 @@ import { Grid, Typography } from "@mui/material";
 
 import { WithStyles, withStyles } from "@mui/styles";
 
-import { appStyles } from "../theme";
-import { mergeStyles } from "../utils";
+import { appStyles } from "../../theme";
+import { mergeStyles } from "../../utils";
 
 const styles = mergeStyles(appStyles);
 

@@ -6,10 +6,10 @@ import { ArrowBack, ArrowForward, Phone, Instagram } from "@mui/icons-material";
 
 import ReactPlayer from "react-player";
 
-import { appStyles } from "../theme";
-import { mergeStyles, options } from "../utils";
+import { appStyles } from "../../theme";
+import { mergeStyles, options } from "../../utils";
 
-import pricesBackground from '../assets/prices_background.jpg';
+import pricesBackground from '../../assets/prices_background.jpg';
 
 const styles = mergeStyles(appStyles);
 
@@ -31,7 +31,7 @@ export const PricesSection = withStyles(styles)(function (props: Props) {
     const price2Ref = useRef<HTMLDivElement>(null);
     const price3Ref = useRef<HTMLDivElement>(null);
 
-    const videoUrl: string = '../assets/prices_video.mp4';
+    const videoUrl: string = '../../assets/prices_video.mp4';
 
     useEffect(() => {
         if (sectionShown) return;

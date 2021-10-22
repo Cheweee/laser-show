@@ -24,8 +24,6 @@ export const App = withStyles(styles)(function (props: any) {
     const [index, setIndex] = useState<number>(0);
     const [scrollingDone, setScrollingDone] = useState<boolean>(true);
 
-    useEffect(() => { document.title = "Art House Media Group" }, []);
-
     useEffect(() => {
         switch (index) {
             case 0:
